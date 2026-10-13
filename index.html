@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vijay Edits</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- moving dark colour background -->
+  <div class="bg" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+    <span class="blob b4"></span>
+  </div>
+
+  <header class="nav">
+    <a href="#home" class="brand">Vijay Edits</a>
+    <nav id="navLinks"></nav>
+  </header>
+
+  <main>
+    <p class="msg err" id="setupWarn" style="display:none"></p>
+
+    <!-- HOME: website name + Start Project, founder info at the bottom -->
+    <section id="view-home" class="view">
+      <div class="hero">
+        <h1>Vijay Edits</h1>
+        <a class="btn big" href="#project">Start Project</a>
+      </div>
+      <div id="homeFounder" class="home-founder"></div>
+    </section>
+
+    <!-- START PROJECT: founder info (black box) + send-clips form below -->
+    <section id="view-project" class="view">
+      <div id="projectFounder"></div>
+      <div id="uploadPanel" class="panel"></div>
+    </section>
+
+    <!-- LOGIN / REGISTER -->
+    <section id="view-login" class="view">
+      <div class="panel narrow">
+        <div class="tabs" id="loginTabs">
+          <button data-tab="client" class="active">Client login</button>
+          <button data-tab="register">New client</button>
+          <button data-tab="editor">Editor login</button>
+        </div>
+        <form id="loginForm" novalidate></form>
+        <p class="msg" id="loginMsg"></p>
+      </div>
+    </section>
+
+    <!-- CLIENT: my projects -->
+    <section id="view-mine" class="view">
+      <div class="panel">
+        <h2>My projects</h2>
+        <div id="myList"></div>
+      </div>
+    </section>
+
+    <!-- EDITOR DASHBOARD -->
+    <section id="view-editor" class="view">
+      <div class="panel">
+        <h2>Client projects</h2>
+        <div class="chips" id="editorFilter"></div>
+        <div id="editorList"></div>
+      </div>
+    </section>
+  </main>
+
+  <noscript><p style="padding:24px">Please turn on JavaScript to use this website.</p></noscript>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
